@@ -1,0 +1,31 @@
+/* src/style.css */
+/* O Bootstrap já cuida da maior parte, aqui só colocamos pequenos toques nossos */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+
+header {
+  background: linear-gradient(to right, #193AAE, #14004e);
+  color: white;
+}
+
+html {
+  /* Faz a rolagem da página ser suave ao clicar nos links do menu */
+  scroll-behavior: smooth;
+}
+
+/* Um pequeno efeito visual ao passar o mouse sobre as caixas de serviço */
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+#contato {
+  background: linear-gradient(to right, #193AAE, #14004e);
+  color: white;
+  padding: 50px 0;
+}

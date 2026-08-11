@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suporte Técnico de TI</title>
+    
+    <!-- Importando o CSS do Bootstrap via CDN (Link direto da internet) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Nosso arquivo de CSS personalizado (se precisarmos de ajustes) -->
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body>
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Suporte Técnico de TI</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+            <li class="nav-item"><a class="nav-link" href="#avaliacoes">Avaliações</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CABEÇALHO (HERO SECTION) -->
+    <header class="bg-primary text-white text-center py-5">
+      <div class="container py-5">
+        <h1 class="display-4 font-weight-bold">Seu Computador mais <span class="text-warning">Rápido</span> e <span class="text-warning">Seguro</span></h1>
+        <p class="lead">Soluções profissionais em TI para manter seu equipamento sempre novo.</p>
+        <a href="#contato" class="btn btn-light btn-lg mt-3">Solicite um Orçamento</a>
+      </div>
+    </header>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Sobre Mim</h2>
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <!-- Espaço para sua foto profissional -->
+            <img src="https://via.placeholder.com/500x400" alt="Minha Foto Profissional" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-md-6">
+            <h3>Profissionalismo e Confiança</h3>
+            <p>Sou técnico com mais de <span class="text-warning">um</span> ano de experiência no mercado. Meu objetivo é resolver seus problemas tecnológicos de forma rápida, transparente e com preço justo.</p>
+            <p>Seja um computador lento ou a necessidade de uma peça nova, eu cuido do seu equipamento como se fosse meu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS PRESTADOS -->
+    <section id="servicos" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Meus Serviços</h2>
+        <div class="row g-4">
+          
+          <!-- Serviço 1 -->
+          <div class="col-md-3">
+            <div class="card h-100 text-center shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title text-primary">Manutenção de Hardware</h5>
+                <p class="card-text">Reparo e substituição de peças defeituosas do seu computador, indicando peças necessárias.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Serviço 2 -->
+          <div class="col-md-3">
+            <div class="card h-100 text-center shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title text-primary">Instalação de Software</h5>
+                <p class="card-text">Formatação, instalação do Windows, Office e AutoCAD.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Serviço 3 -->
+          <div class="col-md-3">
+            <div class="card h-100 text-center shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title text-primary">Limpeza Interna</h5>
+                <p class="card-text">Limpeza completa e troca de pasta térmica para evitar superaquecimento.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Serviço 4 -->
+          <div class="col-md-3">
+            <div class="card h-100 text-center shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title text-primary">Upgrades</h5>
+                <p class="card-text">Instalação de SSD e expansão de Memória RAM para deixar sua máquina voando.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AVALIAÇÕES (PRINTS DO WHATSAPP) -->
+    <section id="avaliacoes" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Feedbacks dos clientes</h2>
+        <div class="row g-4">
+          <!-- Aqui colocaremos as imagens dos seus prints -->
+          <div class="col-md-4">
+            <img src="https://via.placeholder.com/300x500?text=Print+WhatsApp+1" class="img-fluid rounded shadow" alt="Avaliação 1">
+          </div>
+          <div class="col-md-4">
+            <img src="https://via.placeholder.com/300x500?text=Print+WhatsApp+2" class="img-fluid rounded shadow" alt="Avaliação 2">
+          </div>
+          <div class="col-md-4">
+            <img src="https://via.placeholder.com/300x500?text=Print+WhatsApp+3" class="img-fluid rounded shadow" alt="Avaliação 3">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <div class="container">
+        <h2 class="text-center mb-4">Entre em Contato</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center">
+            <p>Precisa de ajuda agora? Clique no botão abaixo para falarmos diretamente pelo WhatsApp!</p>
+            <button id="btn-whatsapp" class="btn btn-success btn-lg mt-3">
+              Falar no WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Importando o JavaScript do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Link para o nosso arquivo TypeScript automatizado pelo Vite -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
