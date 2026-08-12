@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suporte Técnico de TI</title>
-    
+    <link rel="icon" href="./src/assets/computer.png" type="image/x-icon" />
+    <title>Gabriel Alves - Sup. Técnico TI</title>
+
     <!-- Importando o CSS do Bootstrap via CDN (Link direto da internet) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -15,10 +16,9 @@
     <!-- BARRA DE NAVEGAÇÃO -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Suporte Técnico de TI</a>
+        <a class="navbar-brand" href="#">Gabriel Alves - Suporte Técnico TI</a>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
             <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
             <li class="nav-item"><a class="nav-link" href="#avaliacoes">Avaliações</a></li>
             <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
@@ -28,9 +28,9 @@
     </nav>
 
     <!-- CABEÇALHO (HERO SECTION) -->
-    <header class="bg-primary text-white text-center py-5">
+    <header class="text-white text-center py-5">
       <div class="container py-5">
-        <h1 class="display-4 font-weight-bold">Seu Computador mais <span class="text-warning">Rápido</span> e <span class="text-warning">Seguro</span></h1>
+        <h1 class="display-4 font-weight-bold">Seu Computador mais <span>Rápido</span> e <span>Seguro</span></h1>
         <p class="lead">Soluções profissionais em TI para manter seu equipamento sempre novo.</p>
         <a href="#contato" class="btn btn-light btn-lg mt-3">Solicite um Orçamento</a>
       </div>
@@ -39,15 +39,14 @@
     <!-- SOBRE MIM -->
     <section id="sobre" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-4">Sobre Mim</h2>
         <div class="row align-items-center">
           <div class="col-md-6">
             <!-- Espaço para sua foto profissional -->
-            <img src="https://via.placeholder.com/500x400" alt="Minha Foto Profissional" class="img-fluid rounded shadow">
+            <img src="src\assets\Image.png" alt="Minha Foto Profissional" class="img-fluid rounded shadow">
           </div>
           <div class="col-md-6">
             <h3>Profissionalismo e Confiança</h3>
-            <p>Sou técnico com mais de <span class="text-warning">um</span> ano de experiência no mercado. Meu objetivo é resolver seus problemas tecnológicos de forma rápida, transparente e com preço justo.</p>
+            <p>Sou técnico com <span class="numero">2+</span> anos de experiência no mercado. Meu objetivo é resolver seus problemas tecnológicos de forma rápida, transparente e com preço justo.</p>
             <p>Seja um computador lento ou a necessidade de uma peça nova, eu cuido do seu equipamento como se fosse meu.</p>
           </div>
         </div>
@@ -104,34 +103,161 @@
       </div>
     </section>
 
-    <!-- AVALIAÇÕES (PRINTS DO WHATSAPP) -->
-    <section id="avaliacoes" class="py-5">
+    <!-- TABELA DE PREÇOS FIXOS -->
+    <section id="precos" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-5">Feedbacks dos clientes</h2>
-        <div class="row g-4">
-          <!-- Aqui colocaremos as imagens dos seus prints -->
+        <div class="text-center mb-5">
+          <h2>Combos de Serviço</h2>
+          <p class="lead text-muted">Soluções completas com o melhor custo-benefício para o seu equipamento.</p>
+        </div>
+        
+        <div class="row justify-content-center g-4">
+          
+          <!-- Combo 1: PC Renovado -->
           <div class="col-md-4">
-            <img src="https://via.placeholder.com/300x500?text=Print+WhatsApp+1" class="img-fluid rounded shadow" alt="Avaliação 1">
+            <div class="card h-100 shadow-sm border-primary">
+              <div class="card-header text-white text-center py-3" id="combo">
+                <h4 class="my-0 font-weight-normal">Combo PC Renovado</h4>
+              </div>
+              <!-- Adicionamos d-flex e flex-column para organizar os itens internamente -->
+              <div class="card-body text-center d-flex flex-column">
+                <h1 class="card-title text-primary mt-2">R$ 110<small class="text-muted">,00</small></h1>
+                <!-- flex-grow-1 empurra o botão para o final do cartão -->
+                <ul class="list-unstyled mt-3 mb-4 text-start px-3 flex-grow-1">
+                  <li class="mb-2">✔️ Formatação limpa (Windows 10 ou 11)</li>
+                  <li class="mb-2">✔️ Limpeza física interna completa</li>
+                  <li class="mb-2">✔️ Troca da pasta térmica</li>
+                  <li class="mb-2">✔️ Atualização de drivers essenciais</li>
+                </ul>
+                <!-- Usamos data-combo para guardar o nome do serviço no HTML -->
+                <button class="btn btn-outline-primary w-100 btn-combo" data-combo="Combo PC Renovado">Agendar Combo</button>
+              </div>
+            </div>
           </div>
+
+          <!-- Combo 2: Setup -->
           <div class="col-md-4">
-            <img src="https://via.placeholder.com/300x500?text=Print+WhatsApp+2" class="img-fluid rounded shadow" alt="Avaliação 2">
+            <div class="card h-100 shadow-sm border-primary">
+              <div class="card-header text-white text-center py-3" id="combo">
+                <h4 class="my-0 font-weight-normal">Combo Setup</h4>
+              </div>
+              <div class="card-body text-center d-flex flex-column">
+                <h1 class="card-title text-primary mt-2">R$ 130<small class="text-muted">,00</small></h1>
+                <ul class="list-unstyled mt-3 mb-4 text-start px-3 flex-grow-1">
+                  <li class="mb-2">✔️ Instalação de novos hardwares (RAM/SSD)</li>
+                  <li class="mb-2">✔️ Limpeza preventiva</li>
+                  <li class="mb-2">✔️ Clonagem de sistema ou Instalação limpa</li>
+                  <li class="mb-2">✔️ Otimização básica para jogos</li>
+                </ul>
+                <button class="btn btn-outline-primary w-100 btn-combo" data-combo="Combo Setup">Agendar Combo</button>
+              </div>
+            </div>
           </div>
+
+          <!-- Combo 3: Salva-Vidas -->
           <div class="col-md-4">
-            <img src="https://via.placeholder.com/300x500?text=Print+WhatsApp+3" class="img-fluid rounded shadow" alt="Avaliação 3">
+            <div class="card h-100 shadow-sm border-primary">
+              <div class="card-header text-white text-center py-3" id="combo">
+                <h4 class="my-0 font-weight-normal">Combo Salva-Vidas</h4>
+              </div>
+              <div class="card-body text-center d-flex flex-column">
+                <h1 class="card-title text-primary mt-2">R$ 120<small class="text-muted">,00</small></h1>
+                <ul class="list-unstyled mt-3 mb-4 text-start px-3 flex-grow-1">
+                  <li class="mb-2">✔️ Backup completo seguro (Até 100GB)</li>
+                  <li class="mb-2">✔️ Formatação e Instalação de Sistema</li>
+                  <li class="mb-2">✔️ Retorno dos arquivos organizados</li>
+                </ul>
+                <button class="btn btn-outline-primary w-100 btn-combo" data-combo="Combo Salva-Vidas">Agendar Combo</button>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
+    
+    <!-- AVALIAÇÕES (PRINTS DO WHATSAPP) -->
+    <section id="avaliacoes" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">O que dizem os clientes</h2>
+        
+        <!-- 
+        ====================================================================
+        CÓDIGO DO CARROSSEL SALVO PARA O FUTURO (COMENTADO)
+        Para reativar no futuro: apague os sinais de comentário e remova a 
+        grade ativa que está mais abaixo.
+        ====================================================================
+        -->
+        <!--
+        <div id="carrosselFeedbacks" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner text-center">
+            
+            <div class="carousel-item active" data-bs-interval="5000">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-4 mb-3 mb-md-0">
+                  <img src="https://via.placeholder.com/300x500?text=Print+1" class="img-fluid print-whatsapp rounded shadow" alt="Avaliação 1">
+                </div>
+                <div class="col-12 col-md-4 mb-3 mb-md-0 d-none d-md-block">
+                  <img src="https://via.placeholder.com/300x500?text=Print+2" class="img-fluid print-whatsapp rounded shadow" alt="Avaliação 2">
+                </div>
+                <div class="col-12 col-md-4 mb-3 mb-md-0 d-none d-md-block">
+                  <img src="https://via.placeholder.com/300x500?text=Print+3" class="img-fluid print-whatsapp rounded shadow" alt="Avaliação 3">
+                </div>
+              </div>
+            </div>
 
+          </div>
+          <div class="d-flex justify-content-center mt-4 gap-3">
+            <button class="btn btn-outline-primary px-4" type="button" data-bs-target="#carrosselFeedbacks" data-bs-slide="prev">
+              &laquo; Anterior
+            </button>
+            <button class="btn btn-outline-primary px-4" type="button" data-bs-target="#carrosselFeedbacks" data-bs-slide="next">
+              Próximo &raquo;
+            </button>
+          </div>
+        </div>
+        -->
+
+        <!-- 
+        ====================================================================
+        GRADE ATUAL COM 3 FEEDBACKS LADO A LADO (ATIVA)
+        ====================================================================
+        -->
+        <div class="row justify-content-center text-center">
+          
+          <!-- Print 1 -->
+          <!-- 'col-12' ocupa toda a tela no celular, 'col-md-4' ocupa 1/3 no computador -->
+          <div class="col-12 col-md-4 mb-4">
+            <img src="https://via.placeholder.com/300x500?text=Print+1" class="img-fluid print-whatsapp rounded shadow" alt="Avaliação 1">
+          </div>
+
+          <!-- Print 2 -->
+          <div class="col-12 col-md-4 mb-4">
+            <img src="https://via.placeholder.com/300x500?text=Print+2" class="img-fluid print-whatsapp rounded shadow" alt="Avaliação 2">
+          </div>
+
+          <!-- Print 3 -->
+          <div class="col-12 col-md-4 mb-4">
+            <img src="https://via.placeholder.com/300x500?text=Print+3" class="img-fluid print-whatsapp rounded shadow" alt="Avaliação 3">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+              
     <!-- CONTATO -->
     <section id="contato">
       <div class="container">
         <h2 class="text-center mb-4">Entre em Contato</h2>
         <div class="row justify-content-center">
           <div class="col-md-6 text-center">
-            <p>Precisa de ajuda agora? Clique no botão abaixo para falarmos diretamente pelo WhatsApp!</p>
+            <p>Precisa de ajuda agora? Clique em um dos botões abaixo para agendarmos diretamente pelo WhatsApp ou e-mail!</p>
             <button id="btn-whatsapp" class="btn btn-success btn-lg mt-3">
-              Falar no WhatsApp
+              Falar no whatsapp
+            </button>
+            <button id="btn-email" class="btn btn-success btn-lg mt-3">
+              Enviar e-mail
             </button>
           </div>
         </div>

@@ -6,13 +6,23 @@ body {
 }
 
 header {
-  background: linear-gradient(to right, #193AAE, #14004e);
+  background-color: #0d2f49;
   color: white;
 }
 
 html {
   /* Faz a rolagem da página ser suave ao clicar nos links do menu */
   scroll-behavior: smooth;
+}
+
+span {
+  color: #28a745;
+}
+
+span.numero {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 24px;
 }
 
 /* Um pequeno efeito visual ao passar o mouse sobre as caixas de serviço */
@@ -25,7 +35,43 @@ html {
 }
 
 #contato {
-  background: linear-gradient(to right, #193AAE, #14004e);
+  background-color: #0d2f49;
   color: white;
   padding: 50px 0;
+}
+
+#combo {
+  background-color: #0d2f49;
+}
+
+/* ==========================================================================
+   INÍCIO DA RESPONSIVIDADE (MEDIA QUERIES)
+   Tudo que estiver dentro deste bloco só afetará telas com até 768px de largura (Celulares)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Reduz o tamanho do título principal para não ocupar a tela toda */
+    .display-4 {
+        font-size: 2.2rem;
+    }
+    
+    /* 2. Ajusta o tamanho do subtítulo no cabeçalho */
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    /* 3. Centraliza os textos da seção "Sobre Mim" no celular */
+    #sobre h3, #sobre p {
+        text-align: center;
+    }
+
+    /* 4. Dá um pequeno respiro (margem) entre a foto e o texto no celular */
+    #sobre img {
+        margin-bottom: 20px;
+    }
+    
+    /* 5. Desliga a animação dos cards de serviço no celular para evitar toques acidentais */
+    .card:hover {
+        transform: none;
+    }
 }
