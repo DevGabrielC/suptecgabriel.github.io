@@ -3,13 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./src/assets/computer.png" type="image/x-icon" />
+    <link rel="icon" href="./src/assets/Icon.png" type="image/x-icon" />
     <title>Gabriel Alves - Sup. Técnico TI</title>
 
     <!-- Importando o CSS do Bootstrap via CDN (Link direto da internet) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Nosso arquivo de CSS personalizado (se precisarmos de ajustes) -->
+    <link rel="stylesheet" href="./src/style.css">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0STT0SWZT"></script>
+    <script>
+      // Cria a estrutura para organizar os dados enviados
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Configura o script com a data e hora do acesso
+      gtag('js', new Date());
+      
+      // Conecta o site à sua conta de relatórios
+      gtag('config', 'G-Q0STT0SWZT');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./src/assets/computer.png" type="image/x-icon" />
+    <title>Gabriel Alves - Sup. Técnico TI</title>
+
+    <!-- 1. Meta Tags de SEO para o Google -->
+    <meta name="description" content="Suporte técnico especializado em TI. Formatação, limpeza interna, upgrades de hardware e instalação de software. Atendimento rápido e de confiança." />
+    <meta name="keywords" content="suporte técnico, manutenção de computadores, formatação, upgrade SSD, limpeza de notebook, TI" />
+    <meta name="author" content="Gabriel Alves" />
+
+    <!-- 2. Meta Tags Open Graph para WhatsApp, Facebook e LinkedIn -->
+    <meta property="og:title" content="Gabriel Alves - Soluções em TI" />
+    <meta property="og:description" content="Deixe seu computador mais rápido e seguro. Clique aqui e conheça os combos de manutenção e upgrade!" />
+    <meta property="og:image" content="https://devgabrielc.github.io/suptecgabriel.github.io/src/assets/ImagemPrincipal.png" />
+    <meta property="og:url" content="https://devgabrielc.github.io/suptecgabriel.github.io/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Importando o CSS do Bootstrap via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Arquivo de CSS personalizado -->
     <link rel="stylesheet" href="./src/style.css">
   </head>
   <body>
@@ -41,13 +77,13 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
-            <!-- Espaço para sua foto profissional -->
-            <img src="src/assets/Image.png" alt="Minha Foto Profissional" class="img-fluid rounded shadow">
+            <img src="src/assets/ImagemPrincipal.png" alt="Minha Foto Profissional" class="img-fluid rounded shadow">
           </div>
           <div class="col-md-6">
             <h3>Profissionalismo e Confiança</h3>
             <p>Sou técnico com <span class="numero">2+</span> anos de experiência no mercado. Meu objetivo é resolver seus problemas tecnológicos de forma rápida, transparente e com preço justo.</p>
             <p>Seja um computador lento ou a necessidade de uma peça nova, eu cuido do seu equipamento como se fosse meu.</p>
+            <p class="text-danger">Atendimento presencial somente na região de Belo Horizonte - MG. Atendimento via anydesk disponível para todo o Brasil.</p>
           </div>
         </div>
       </div>
@@ -119,7 +155,6 @@
               <div class="card-header text-white text-center py-3" id="combo">
                 <h4 class="my-0 font-weight-normal">Combo PC Renovado</h4>
               </div>
-              <!-- Adicionamos d-flex e flex-column para organizar os itens internamente -->
               <div class="card-body text-center d-flex flex-column">
                 <h1 class="card-title text-primary mt-2">R$ 140<small class="text-muted">,00</small></h1>
                 <!-- flex-grow-1 empurra o botão para o final do cartão -->
@@ -129,7 +164,6 @@
                   <li class="mb-2">✔️ Troca da pasta térmica</li>
                   <li class="mb-2">✔️ Atualização de drivers essenciais</li>
                 </ul>
-                <!-- Usamos data-combo para guardar o nome do serviço no HTML -->
                 <button class="btn btn-outline-primary w-100 btn-combo" data-combo="Combo PC Renovado">Agendar Combo</button>
               </div>
             </div>
