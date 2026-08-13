@@ -1,8 +1,13 @@
+# .github/workflows/deploy.yml
 name: Publicar Site Vite no GitHub Pages
 
 on:
   push:
     branches: ["main"]
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -22,7 +27,7 @@ jobs:
       - name: 2. Preparar o ambiente Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22 
 
       - name: 3. Instalar as dependências do projeto
         run: npm install
