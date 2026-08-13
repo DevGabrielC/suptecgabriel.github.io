@@ -1,0 +1,43 @@
+name: Publicar Site Vite no GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Baixar o código do repositório
+        uses: actions/checkout@v4
+
+      - name: 2. Preparar o ambiente Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 3. Instalar as dependências do projeto
+        run: npm install
+
+      - name: 4. Compilar o TypeScript para JavaScript (Build)
+        run: npm run build
+
+      - name: 5. Configurar o GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: 6. Empacotar a pasta 'dist' gerada pelo Vite
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: 7. Publicar no site oficial
+        id: deployment
+        uses: actions/deploy-pages@v4
