@@ -20,7 +20,7 @@ function abrirEmail(): void {
 function solicitarCombo(event: Event): void {
   const botaoClicado = event.currentTarget as HTMLButtonElement;
   const nomeDoCombo = botaoClicado.getAttribute('data-combo');
-  const telefone = '31972652025'; 
+  const telefone = '5531972652025'; 
   const mensagem = encodeURIComponent(`Olá! Gostaria de agendar o ${nomeDoCombo}.`);
   
   window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
