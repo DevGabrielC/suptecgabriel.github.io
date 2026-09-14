@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./src/assets/computer.png" type="image/x-icon" />
+    <title>Para Empresas - Gabriel Alves TI</title>
+
+    <!-- Importando o CSS do Bootstrap via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body>
+    
+    <!-- BARRA DE NAVEGAÇÃO SIMPLIFICADA (Com botão de voltar) -->
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">← Voltar para Início</a>
+      </div>
+    </nav>
+
+    <!-- CABEÇALHO PJ -->
+    <header class="text-white text-center py-5" style="background-color: #0d2f49;">
+      <div class="container py-5">
+        <h1 class="display-4 font-weight-bold">Suporte Especializado para <span>Empresas</span></h1>
+        <p class="lead">Garantimos a infraestrutura de TI do seu negócio para você focar no que importa.</p>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO DA NOVA LANDING PAGE -->
+    <section class="py-5 bg-light">
+      <div class="container text-center">
+
+<h2 class="mb-2">Pacotes de Suporte B2B</h2>
+        <p class="text-muted mb-5">Foco em Estações de Trabalho. Atendimento exclusivo para empresas com até 50 funcionários.</p>
+        
+        <!-- GRADE DE SERVIÇOS -->
+        <div class="row g-4 justify-content-center">
+          
+          <!-- Pacote 1: Básico -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-primary">
+              <div class="card-header text-white text-center py-3" style="background-color: #0d2f49;">
+                <h4 class="my-0 font-weight-normal">Básico (100% Remoto)</h4>
+              </div>
+              <div class="card-body text-center d-flex flex-column">
+                <!-- fs-6 diminui a fonte do texto "/máquina/mês" para não quebrar a linha -->
+                <h2 class="card-title text-primary mt-2">R$ 40 a R$ 50<small class="text-muted fs-6">/máquina/mês</small></h2>
+                <ul class="list-unstyled mt-3 mb-4 text-start px-3 flex-grow-1">
+                  <li class="mb-2">✔️ Suporte via AnyDesk para dúvidas/erros do dia a dia</li>
+                  <li class="mb-2">✔️ Limpeza de arquivos temporários</li>
+                  <li class="mb-2">✔️ Atualização do Windows/Antivírus</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Pacote 2: Prevenção Física -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-primary">
+              <div class="card-header text-white text-center py-3" style="background-color: #0d2f49;">
+                <h4 class="my-0 font-weight-normal">Prevenção Física (Híbrido)</h4>
+              </div>
+              <div class="card-body text-center d-flex flex-column">
+                <h2 class="card-title text-primary mt-2">R$ 60 a R$ 80<small class="text-muted fs-6">/máquina/mês</small></h2>
+                <ul class="list-unstyled mt-3 mb-4 text-start px-3 flex-grow-1">
+                  <li class="mb-2"><strong>✔️ Tudo do Básico +</strong></li>
+                  <li class="mb-2">✔️ 1 Limpeza Física Preventiva a cada 6 meses programada com antecedência</li>
+                  <li class="mb-2">✔️ Desmontagem, remoção de pó e troca de pasta térmica</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pacote 3: Gestão Completa -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-primary">
+              <div class="card-header text-white text-center py-3" style="background-color: #0d2f49;">
+                <h4 class="my-0 font-weight-normal">Gestão Completa (Turnover)</h4>
+              </div>
+              <div class="card-body text-center d-flex flex-column">
+                <h2 class="card-title text-primary mt-2">R$ 90 a R$ 110<small class="text-muted fs-6">/máquina/mês</small></h2>
+                <ul class="list-unstyled mt-3 mb-4 text-start px-3 flex-grow-1">
+                  <li class="mb-2"><strong>✔️ Tudo do Híbrido +</strong></li>
+                  <li class="mb-2">✔️ Formatação gratuita quando um funcionário sai</li>
+                  <li class="mb-2">✔️ Configuração (Onboarding) de novos usuários e instalação de softwares da empresa</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+        <!-- BOTÕES DE CHAMADA PARA AÇÃO (CTA) -->
+        <div class="mt-5 d-flex justify-content-center gap-3 flex-wrap">
+          
+          <!-- Botão WhatsApp PJ -->
+          <button class="btn btn-success btn-lg px-4 py-3 shadow btn-wpp-dinamico" data-cliente="PJ">
+            Falar com Especialista no WhatsApp
+          </button>
+          
+          <!-- Botão E-mail PJ -->
+          <!-- Utilizamos btn-outline-secondary para dar um contraste elegante com o botão verde -->
+          <button class="btn btn-outline-secondary btn-lg px-4 py-3 shadow btn-email-dinamico" data-cliente="PJ">
+            Solicitar Orçamento por E-mail
+          </button>
+
+        </div>
+      </div>
+    </section>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

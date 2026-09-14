@@ -12,6 +12,7 @@
     <!-- Nosso arquivo de CSS personalizado (se precisarmos de ajustes) -->
     <link rel="stylesheet" href="./src/style.css">
     
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0STT0SWZT"></script>
     <script>
       // Cria a estrutura para organizar os dados enviados
@@ -72,6 +73,18 @@
         <a href="#contato" class="btn btn-light btn-lg mt-3">Solicite um Orçamento</a>
       </div>
     </header>
+
+    <!-- ==========================================
+         ATENDIMENTO EMPRESARIAL (PJ)
+         ========================================== -->
+    <section id="pj-chamada" class="bg-dark text-white py-5">
+      <div class="container text-center">
+        <h2 class="mb-3">Atendimento para Empresas (PJ)</h2>
+        <p class="lead mb-4">Soluções dedicadas, estabilidade e contratos sob medida para manter o seu negócio sempre funcionando.</p>
+        <!-- O link aponta para o novo arquivo HTML que vamos criar -->
+        <a href="./pj.html" class="btn btn-success btn-lg">Conheça as Soluções para PJ</a>
+      </div>
+    </section>
 
     <!-- SOBRE MIM -->
     <section id="sobre" class="py-5">
@@ -301,12 +314,19 @@
         <div class="row justify-content-center">
           <div class="col-md-6 text-center">
             <p>Precisa de ajuda agora? Clique em um dos botões abaixo para agendarmos diretamente pelo WhatsApp ou e-mail!</p>
-            <button id="btn-whatsapp" class="btn btn-success btn-lg mt-3">
-              Falar no whatsapp
-            </button>
-            <button id="btn-email" class="btn btn-success btn-lg mt-3">
-              Enviar e-mail
-            </button>
+            
+            <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+              <!-- Botão WhatsApp PF -->
+              <button class="btn btn-success btn-lg px-4 py-3 shadow btn-wpp-dinamico" data-cliente="PF">
+                Falar no WhatsApp
+              </button>
+              
+              <!-- Botão E-mail PF -->
+              <button class="btn btn-outline-secondary btn-lg px-4 py-3 shadow btn-email-dinamico" data-cliente="PF">
+                Enviar E-mail
+              </button>
+            </div>
+            
           </div>
         </div>
       </div>
