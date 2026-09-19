@@ -1,66 +1,56 @@
-// src/main.ts
+type ClientType = 'PF' | 'PJ';
 
-// 1. MAPEAMENTO DE ELEMENTOS
-const botoesCombo = document.querySelectorAll('.btn-combo') as NodeListOf<HTMLButtonElement>;
-const botoesWppDinamico = document.querySelectorAll('.btn-wpp-dinamico') as NodeListOf<HTMLButtonElement>;
-const botoesEmailDinamico = document.querySelectorAll('.btn-email-dinamico') as NodeListOf<HTMLButtonElement>;
+const WHATSAPP_NUMBER = '5531972652025';
+const SUPPORT_EMAIL = 'suptec.gabriel@gmail.com';
 
-// 2. FUNÇÃO CONDICIONAL PARA WHATSAPP
-function abrirWhatsAppCondicional(event: Event): void {
-  const botaoClicado = event.currentTarget as HTMLButtonElement;
-  const tipoCliente = botaoClicado.getAttribute('data-cliente');
-  const telefone = '5531972652025'; 
-  
-  let mensagem = '';
+const whatsappButtons = document.querySelectorAll<HTMLButtonElement>('.btn-wpp-dinamico');
+const emailButtons = document.querySelectorAll<HTMLButtonElement>('.btn-email-dinamico');
+const comboButtons = document.querySelectorAll<HTMLButtonElement>('.btn-combo');
 
-  if (tipoCliente === 'PJ') {
-    mensagem = encodeURIComponent('Olá! Acessei a página corporativa e gostaria de solicitar um orçamento de TI para a minha empresa.');
-  } else {
-    mensagem = encodeURIComponent('Olá! Acessei o site e gostaria de um orçamento para suporte técnico de TI no meu equipamento.');
-  }
-
-  window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
+// Abre links externos sem expor a página a window.opener (reverse tabnabbing).
+function openExternalLink(url: string): void {
+  window.open(url, '_blank', 'noopener,noreferrer');
 }
 
-// 3. NOVA FUNÇÃO CONDICIONAL PARA E-MAIL
-function abrirEmailCondicional(event: Event): void {
-  const botaoClicado = event.currentTarget as HTMLButtonElement;
-  const tipoCliente = botaoClicado.getAttribute('data-cliente');
-  const email = 'suptec.gabriel@gmail.com';
-  
-  let assunto = '';
-  let corpo = '';
-
-  if (tipoCliente === 'PJ') {
-    assunto = encodeURIComponent('[NOVO CLIENTE B2B] Solicitação de Suporte Empresarial');
-    corpo = encodeURIComponent('Olá Gabriel,\n\nAcessei a página corporativa e gostaria de solicitar um orçamento de TI para a minha empresa. Nossas principais necessidades no momento são:\n\n- \n- \n\nAguardo retorno.');
-  } else {
-    assunto = encodeURIComponent('Solicitação de Suporte Técnico');
-    corpo = encodeURIComponent('Olá Gabriel,\n\nGostaria de solicitar suporte técnico para meu equipamento. O problema/serviço que preciso é:\n\n- \n\nAguardo retorno.');
-  }
-
-  window.open(`mailto:${email}?subject=${assunto}&body=${corpo}`, '_blank');
+function buildWhatsAppUrl(message: string): string {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-// 4. FUNÇÃO PARA OS COMBOS DE SERVIÇO
-function solicitarCombo(event: Event): void {
-  const botaoClicado = event.currentTarget as HTMLButtonElement;
-  const nomeDoCombo = botaoClicado.getAttribute('data-combo');
-  const telefone = '5531972652025'; 
-  const mensagem = encodeURIComponent(`Olá! Gostaria de agendar o ${nomeDoCombo}.`);
-  
-  window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
+function getClientType(event: Event): ClientType | null {
+  const button = event.currentTarget as HTMLButtonElement;
+  return button.getAttribute('data-cliente') as ClientType | null;
 }
 
-// 5. ATIVAÇÃO DOS EVENTOS DE CLIQUE
-botoesWppDinamico.forEach(botao => {
-  botao.addEventListener('click', abrirWhatsAppCondicional);
-});
+function handleWhatsAppClick(event: Event): void {
+  const clientType = getClientType(event);
 
-botoesEmailDinamico.forEach(botao => {
-  botao.addEventListener('click', abrirEmailCondicional);
-});
+  const message = clientType === 'PJ'
+    ? 'Olá! Acessei a página corporativa e gostaria de solicitar um orçamento de TI para a minha empresa.'
+    : 'Olá! Acessei o site e gostaria de um orçamento para suporte técnico de TI no meu equipamento.';
 
-botoesCombo.forEach(botao => {
-  botao.addEventListener('click', solicitarCombo);
-});
+  openExternalLink(buildWhatsAppUrl(message));
+}
+
+function handleEmailClick(event: Event): void {
+  const clientType = getClientType(event);
+
+  const subject = clientType === 'PJ'
+    ? '[NOVO CLIENTE B2B] Solicitação de Suporte Empresarial'
+    : 'Solicitação de Suporte Técnico';
+
+  const body = clientType === 'PJ'
+    ? 'Olá Gabriel,\n\nAcessei a página corporativa e gostaria de solicitar um orçamento de TI para a minha empresa. Nossas principais necessidades no momento são:\n\n- \n- \n\nAguardo retorno.'
+    : 'Olá Gabriel,\n\nGostaria de solicitar suporte técnico para meu equipamento. O problema/serviço que preciso é:\n\n- \n\nAguardo retorno.';
+
+  openExternalLink(`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+}
+
+function handleComboClick(event: Event): void {
+  const button = event.currentTarget as HTMLButtonElement;
+  const comboName = button.getAttribute('data-combo') ?? '';
+  openExternalLink(buildWhatsAppUrl(`Olá! Gostaria de agendar o ${comboName}.`));
+}
+
+whatsappButtons.forEach((button) => button.addEventListener('click', handleWhatsAppClick));
+emailButtons.forEach((button) => button.addEventListener('click', handleEmailClick));
+comboButtons.forEach((button) => button.addEventListener('click', handleComboClick));

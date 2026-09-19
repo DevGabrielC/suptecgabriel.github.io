@@ -7,7 +7,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        pj: 'pj.html'
+        pj: 'pj.html',
+        privacidade: 'privacidade.html',
       }
     }
   }

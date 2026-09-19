@@ -1,5 +1,4 @@
-/* src/style.css */
-/* O Bootstrap já cuida da maior parte, aqui só colocamos pequenos toques nossos */
+/* Ajustes específicos do site, complementares ao Bootstrap */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f8f9fa;
@@ -38,46 +37,106 @@ span.numero {
   padding: 50px 0;
 }
 
-#combo {
+.combo-header,
+.header-pj {
   background-color: #0d2f49;
 }
 
-.print-tamanho-fixo {
-    width: 100%;
-    max-width: 500px;
-    height: 400px;
-    object-fit: contain;
-    background-color: #0d2f49;
+.footer-site {
+  background-color: #0d2f49;
+  color: #e6e6e6;
 }
 
-/* ==========================================================================
-   INÍCIO DA RESPONSIVIDADE (MEDIA QUERIES)
-   Tudo que estiver dentro deste bloco só afetará telas com até 768px de largura (Celulares)
-   ========================================================================== */
+.footer-link {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-link:hover {
+  color: #d9d9d9;
+}
+
+/* Área de toque maior para os links do menu quando aberto no celular */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link {
+    padding: 0.75rem 0.5rem;
+    font-size: 1.05rem;
+  }
+}
+
+.print-tamanho-fixo {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  object-fit: contain;
+  background-color: #0d2f49;
+}
+
+/* Lista com marcador de "check" via CSS, sem depender de emojis */
+.list-check {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-check li {
+  position: relative;
+  padding-left: 1.6em;
+}
+
+.list-check li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Responsividade (telas até 768px) */
 @media (max-width: 768px) {
-    
-    /* 1. Reduz o tamanho do título principal para não ocupar a tela toda */
-    .display-4 {
-        font-size: 2.2rem;
-    }
-    
-    /* 2. Ajusta o tamanho do subtítulo no cabeçalho */
-    .lead {
-        font-size: 1.1rem;
-    }
+  .display-4 {
+    font-size: 2.2rem;
+  }
 
-    /* 3. Centraliza os textos da seção "Sobre Mim" no celular */
-    #sobre h3, #sobre p {
-        text-align: center;
-    }
+  .lead {
+    font-size: 1.1rem;
+  }
 
-    /* 4. Dá um pequeno respiro (margem) entre a foto e o texto no celular */
-    #sobre img {
-        margin-bottom: 20px;
-    }
-    
-    /* 5. Desliga a animação dos cards de serviço no celular para evitar toques acidentais */
-    .card:hover {
-        transform: none;
-    }
+  #sobre h3,
+  #sobre p {
+    text-align: center;
+  }
+
+  #sobre img {
+    margin-bottom: 20px;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* Telas de celular (até 576px): botões de ação ocupam a largura toda,
+   mais fáceis de tocar com o polegar */
+@media (max-width: 575.98px) {
+  .btn-mobile-full {
+    width: 100%;
+  }
+
+  header .display-4 {
+    font-size: 1.8rem;
+  }
+
+  header.py-5 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  header .container.py-5 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .print-tamanho-fixo {
+    height: 260px;
+  }
 }
