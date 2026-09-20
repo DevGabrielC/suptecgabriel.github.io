@@ -54,3 +54,38 @@ function handleComboClick(event: Event): void {
 whatsappButtons.forEach((button) => button.addEventListener('click', handleWhatsAppClick));
 emailButtons.forEach((button) => button.addEventListener('click', handleEmailClick));
 comboButtons.forEach((button) => button.addEventListener('click', handleComboClick));
+
+// Menu mobile (site-nav): abre/fecha e fecha automaticamente ao escolher um link.
+const navToggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+const navLinks = document.getElementById('menuPrincipal');
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// Carrossel de avaliações: rola um cartão por clique, respeitando o scroll-snap do CSS.
+const testimonialTrack = document.getElementById('testimonialTrack');
+const testimonialPrev = document.getElementById('testimonialPrev');
+const testimonialNext = document.getElementById('testimonialNext');
+
+if (testimonialTrack && testimonialPrev && testimonialNext) {
+  const scrollByCard = (direction: 1 | -1): void => {
+    const card = testimonialTrack.querySelector<HTMLElement>('.testimonial-card');
+    const trackGap = parseFloat(getComputedStyle(testimonialTrack).columnGap || '20');
+    const amount = (card?.offsetWidth ?? 300) + trackGap;
+    testimonialTrack.scrollBy({ left: amount * direction, behavior: 'smooth' });
+  };
+
+  testimonialPrev.addEventListener('click', () => scrollByCard(-1));
+  testimonialNext.addEventListener('click', () => scrollByCard(1));
+}
