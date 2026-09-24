@@ -52,6 +52,27 @@
 }
 
 /* ============================================================
+   Utilitários (evitam style="" inline, o que permite uma CSP
+   sem 'unsafe-inline' em style-src)
+   ============================================================ */
+.section-tight {
+  padding-block-start: 0;
+}
+
+.band-compact {
+  padding-block: 2.5rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.about-title {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
    Reset & base
    ============================================================ */
 *,
