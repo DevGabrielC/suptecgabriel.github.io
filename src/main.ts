@@ -1,7 +1,7 @@
 type ClientType = 'PF' | 'PJ';
 
 const WHATSAPP_NUMBER = '5531972652025';
-const SUPPORT_EMAIL = 'suptec.gabriel@gmail.com';
+const SUPPORT_EMAIL = 'contato@suptecgabriel.com.br';
 
 const whatsappButtons = document.querySelectorAll<HTMLButtonElement>('.btn-wpp-dinamico');
 const emailButtons = document.querySelectorAll<HTMLButtonElement>('.btn-email-dinamico');
